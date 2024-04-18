@@ -1,0 +1,33 @@
+<html>
+    <script>
+        function upi(mFrom, mTo, amount, fun1) {
+            if (mFrom == null || mTo == null || amount == null || amount<=0) {
+                fun1("Error");
+            } else {
+                fun1("Success");
+            }
+        }
+        
+        function bhimupi(m1, m2, amt) {
+            upi(m1, m2, amt, function(a) {
+                if (a.toLowerCase() === "success") {
+                    document.write("<p align='center' style='color:green;font-size:5em;font-weight:bold'>Payment Done</p>");
+                } else {
+                    if (a.toLowerCase() === "error") {
+                        document.write("<p align='center' style='color:red;font-size:5em;font-weight:bold'>Error</p>");
+                    } else {
+                        document.write("Unknown");
+                    }
+                }
+            });
+        }
+        
+        
+    </script>
+    <body>
+        <input type="button" onclick="bhimupi(1, 2, 12)" value="success" >
+        <br>
+        <br>
+        <input type="button" onclick="bhimupi(1, 2, 0)" value="error" >
+    </body>
+</html>

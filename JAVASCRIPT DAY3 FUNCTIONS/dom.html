@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Dom Id Length</title>
+    <style>
+        .note {
+            background-color: green;
+            color: white;
+            font-size: 2em;
+        }
+
+        .bright {
+            background-color: rgb(101, 230, 242);
+            color: rgb(196, 15, 159);
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1">
+        <p>Jeevan</p>
+        <p>Garvit</p>
+        <p>Gaurang</p>
+        <p>Tanay</p>
+    </div>
+    <input type="button" value="dom1" onclick="dom1();">
+    <br>
+    <br>
+    <input type="button" value="dom2" onclick="dom2();">
+    <br>
+    <br>
+    <input type="button" value="dom3" onclick="dom3();">
+    <br>
+    <br>
+    <input type="button" value="dom4" onclick="dom4();">
+    <br>
+    <br>
+    <script>
+        function dom1() {
+            alert("dom1");
+            var x = document.getElementById("d1");
+            alert(x.childNodes.length); 
+            alert(x.childNodes.item(5).childNodes.item(0).nodeValue); 
+            alert(x.childNodes.item(5).innerHTML); 
+        }
+        function dom2() {
+            alert("dom2");
+            var x = document.getElementById("d1");
+            x.childNodes.item(7).childNodes.item(0).nodeValue = "Tanmay"; 
+            alert(x.childNodes.item(7).childNodes.item(0).nodeValue); 
+        }
+        function dom3() {
+            alert("dom3");
+            var x=document.getElementById("d1");
+            x.childNodes.item(1).setAttribute("class","note");
+        }
+        function dom4(){
+            alert("dom 4");
+            var x=document.getElementById("d1");
+             var y= x.childNodes.item(7).getAttribute("class");
+
+             if(y=="bright")
+                x.childNodes.item(7).setAttribute("class","note");
+               x.childNodes.item(7).setAttribute("class","bright");
+        }
+
+
+            
+
+
+        
+    </script>
+</body>
+
+</html>

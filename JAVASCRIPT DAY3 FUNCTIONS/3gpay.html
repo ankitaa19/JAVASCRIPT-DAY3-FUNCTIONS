@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+<body>
+    <script>
+        function upi(mfrom,mto,amount,fun1){
+            if(mfrom==null||mto==null||amount==null){
+                fun1("error")
+            }else{
+                fun1("success")
+            }
+        }
+        function Bhimupi(M1, M2, amt) {
+            upi(M1,M2,amt,function(a){
+                
+                    if (a.toLowerCase() === "success") 
+                        document.write("<p style='color:green'>Payment Done</p>");
+                     else if (a.toLowerCase() === "error") 
+                        document.write("<p style='color:red'>Error</p>");
+                     else 
+                        document.write("Unknown");
+                    
+            });}
+            function gpay(mfrom,mto,amount,fun1){
+                if(mfrom==null||mto==null||amount==null){
+                    fun1("error")
+                }else{
+                    fun1("success")
+                }
+            }
+            function g_pay(M1, M2, amt) {
+                upi(M1,M2,amt,function(a){
+                    
+                        if (a.toLowerCase() === "success") 
+                            document.write("<p style='color:green'><img src=https://www.ocbc.com/iwov-resources/sg/ocbc/personal/img/live/digitalbanking/more-services/mobile-payments/google-pay/tab-2-step-img3.png></p>");
+                         else if (a.toLowerCase() === "error") 
+                            document.write("<p style='color:red'><img src=https://support.umomobility.com/hc/article_attachments/9140851220755></i></p>");
+                         else 
+                            document.write("Unknown");
+                        
+                });}
+               
+    </script>
+    <input type="button" onclick="Bhimupi(null,null,9000)" value="bhimupi">
+    <br>
+    <input type="button" onclick="Bhimupi(9022343534,2356256234,20000)" value="bhimupi">
+    <br>
+    <input type="button" onclick="gpay(null,null,9000)" value="gpay">
+    <br>
+    <input type="button" onclick="g_pay(9022343534,2356256234,20000)" value="g_pay">
+    <br>
+
+
+    
+</body>
+</html>

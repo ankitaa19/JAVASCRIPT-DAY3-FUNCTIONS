@@ -1,0 +1,21 @@
+<!-- Function As Data -->
+<html>
+<head>
+    <script>
+        function add(num1, num2, fn) {
+            var ans = num1 + num2;
+            fn(ans);
+        }
+
+        function fun1() {
+            add(12, 13, function(a) {
+                alert("The answer is " + a);
+            });
+        }
+    </script>
+</head>
+<body>
+    
+    <button onclick="fun1()">Calculate</button>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!-- Write a javascript program in html to use decision making and looping statements -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STARBUCKS</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(192, 239, 239);
+        }
+        #container {
+            text-align: center;
+        }
+        #cartItems {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>STARBUCKS</h1>
+
+        <ul id="cartItems"></ul>
+        <p>Total Price: $<span id="totalPrice">0.00</span></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var cart = []; 
+            var total = 0; 
+
+            function addToCart(itemName, itemPrice) {
+                cart.push({ name: itemName, price: itemPrice });
+                displayCart();
+            }
+
+            function displayCart() {
+                var cartItemsList = document.getElementById('cartItems');
+                var totalPriceElement = document.getElementById('totalPrice');
+                
+                cartItemsList.innerHTML = '';
+                total = 0; 
+                
+                for (var i = 0; i < cart.length; i++) {
+                    var item = cart[i];
+                    var listItem = document.createElement('li');
+                    listItem.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+                    cartItemsList.appendChild(listItem);
+                    total += item.price;
+                }
+                
+                totalPriceElement.textContent = total.toFixed(2);
+            }
+
+            function clearCart() {
+                cart = [];
+                total = 250;
+                displayCart();
+            }
+
+            addToCart("Hot Brewed Coffee", 50);
+            addToCart("Cold Brew", 50);
+
+           
+            var itemName = "Vanilla Sweet Cream Cold Brew";
+            var itemPrice = 150;
+            addToCart(itemName, itemPrice);
+
+            
+            
+        });
+    </script>
+</body>
+</html>
